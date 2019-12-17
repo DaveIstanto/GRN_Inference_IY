@@ -321,18 +321,18 @@ def generate_auroc(actual_edges, pred_score, title='', show=True):
     # Gets auc score
     auc_score = auc(fpr, tpr)
     
-    fig = plt.figure(figsize=(10,10))
-    plt.plot(fpr, tpr, color = 'darkorange', lw = 2, label = f'ROC Curve, AUC = {auc_score}')
-    plt.plot([0, 1], [0, 1], color = 'navy', linestyle = '--')
-    plt.xlim([0.0, 1.0])
-    plt.ylim([0.0, 1.05])
-    plt.xlabel('False Positive Rate')
-    plt.ylabel('True Positive Rate')
-    plt.title(title)
-    plt.legend(loc="lower right")
+    # fig = plt.figure(figsize=(10,10))
+    # plt.plot(fpr, tpr, color = 'darkorange', lw = 2, label = f'ROC Curve, AUC = {auc_score}')
+    # plt.plot([0, 1], [0, 1], color = 'navy', linestyle = '--')
+    # plt.xlim([0.0, 1.0])
+    # plt.ylim([0.0, 1.05])
+    # plt.xlabel('False Positive Rate')
+    # plt.ylabel('True Positive Rate')
+    # plt.title(title)
+    # plt.legend(loc="lower right")
 
-    if show:
-        plt.show()
+    # if show:
+    #     plt.show()
     
     return auc_score
 
@@ -346,19 +346,19 @@ def generate_auprc(actual_edges, pred_score, title='', show=True):
     # ratio of the positive class (used to plot no-skill line)
     positive_ratio = float(sum(actual_edges)) / actual_edges.size
 
-    fig = plt.figure(figsize=(10,10))
-    plt.plot(recall, precision, color = 'darkorange', lw = 2, label = f'PR Curve, AUC = {auc_score}')
-    plt.plot([0, 1], [positive_ratio, positive_ratio], color = 'navy', linestyle = '--', label = 'No Skill')
-    plt.xlim([0.0, 1.0])
-    plt.ylim([0.0, 1.05])
-    plt.xlabel('Recall')
-    plt.ylabel('Precision')
-    plt.title(title)
-    plt.legend(loc="lower right")
+    # fig = plt.figure(figsize=(10,10))
+    # plt.plot(recall, precision, color = 'darkorange', lw = 2, label = f'PR Curve, AUC = {auc_score}')
+    # plt.plot([0, 1], [positive_ratio, positive_ratio], color = 'navy', linestyle = '--', label = 'No Skill')
+    # plt.xlim([0.0, 1.0])
+    # plt.ylim([0.0, 1.05])
+    # plt.xlabel('Recall')
+    # plt.ylabel('Precision')
+    # plt.title(title)
+    # plt.legend(loc="lower right")
 
-    if show:
-        plt.show()
-        print(f'average precision score: {average_precision_score(actual_edges, pred_score)}')
+    # if show:
+    #     plt.show()
+    #         print(f'average precision score: {average_precision_score(actual_edges, pred_score)}')
 
     return auc_score
 
